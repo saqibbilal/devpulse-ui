@@ -1,65 +1,57 @@
-import Image from "next/image";
+import { getProjects } from "@/lib/api";
 
-export default function Home() {
+export default async function Home() {
+  const projects = await getProjects();
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+      <main className="min-h-screen bg-white">
+        {/* Hero Section: Vibrant & Bold (Calvin-inspired) */}
+        <section className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
+          <div className="max-w-4xl">
+            <h1 className="font-display text-7xl md:text-9xl font-bold tracking-tighter text-brand-secondary leading-none mb-8">
+              Dev<span className="text-brand-primary">Pulse</span>
+            </h1>
+            <p className="text-2xl md:text-3xl text-brand-muted font-light leading-relaxed">
+              A showcase of <span className="text-brand-secondary font-medium">end-to-end</span> engineering sprints.
+              Currently focused on Next.js, Laravel, and AWS architecture.
+            </p>
+          </div>
+        </section>
+
+        {/* Projects Grid */}
+        <section className="py-20 px-6 md:px-12 max-w-7xl mx-auto">
+          <div className="flex justify-between items-end mb-12">
+            <h2 className="text-4xl font-bold text-brand-secondary">Latest Sprints</h2>
+            <div className="h-1 w-24 bg-brand-primary"></div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {projects.map((project) => (
+                <article key={project.id} className="group cursor-pointer">
+                  <div className="relative overflow-hidden aspect-video bg-gray-100 mb-6">
+                    <img
+                        src={project.thumbnail_url}
+                        alt={project.title}
+                        className="object-cover w-full h-full grayscale group-hover:grayscale-0 transition-all duration-500"
+                    />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 group-hover:text-brand-primary transition-colors">
+                    {project.title}
+                  </h3>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.tech_stack.map((tech) => (
+                        <span key={tech} className="text-[10px] uppercase tracking-widest border border-gray-200 px-2 py-1 text-brand-muted">
+                    {tech}
+                  </span>
+                    ))}
+                  </div>
+                  <p className="text-brand-muted line-clamp-2 leading-relaxed">
+                    {project.description}
+                  </p>
+                </article>
+            ))}
+          </div>
+        </section>
       </main>
-    </div>
   );
 }
