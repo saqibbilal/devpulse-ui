@@ -1,5 +1,5 @@
 import { getProjects } from "@/lib/api";
-import ProjectCard from "@/components/ProjectCard";
+import { ProjectCard } from "@/components/ProjectCard";
 
 export default async function Home() {
     const projects = await getProjects();
@@ -73,8 +73,20 @@ export default async function Home() {
             </section>
 
             {/* Projects Grid Container */}
-            <section id="work" className="py-24 px-6 max-w-7xl mx-auto">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {/* Latest Sprints Section */}
+            <section id="work" className="py-32 px-6 max-w-7xl mx-auto">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+                    <div>
+                        <h4 className="text-brand-primary font-bold uppercase tracking-[0.2em] text-sm mb-4">Latest Sprints</h4>
+                        <h2 className="text-5xl font-bold tracking-tighter">Selected Projects</h2>
+                    </div>
+                    <p className="text-gray-400 max-w-xs text-right hidden md:block">
+                        A collection of decoupled applications built with Laravel 11 and Next.js 15.
+                    </p>
+                </div>
+
+                {/* The Grid: 1 column on mobile, 2 on tablet, 3 on desktop */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-20 gap-x-12">
                     {projects.map((project) => (
                         <ProjectCard key={project.id} project={project} />
                     ))}
