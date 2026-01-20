@@ -6,19 +6,16 @@
 }
 
 @theme {
-  /* Vibrant Colors */
-  --color-brand-primary: #ff3e55;   /* The vibrant pink/red */
-  --color-brand-secondary: #111111; /* Deep black */
-  --color-brand-accent: #2ecc71;    /* Success green */
-  --color-brand-muted: #888888;     /* Gray */
+  /* Exact Calvin Tones */
+  --color-brand-primary: #f1976b;   /* The main coral-orange */
+  --color-brand-secondary: #ffffff; /* Use white for primary text over orange */
+  --color-brand-dark: #2d2d2d;      /* Deep charcoal for readability on light areas */
+  --color-brand-accent: #ffede4;    /* Soft peach background for secondary sections */
 
-  /* Surface Colors */
-  --color-background: #ffffff;
-  --color-surface: #f9f9f9;
-
-  /* Typography */
-  --font-sans: "Inter", "system-ui", "sans-serif";
-  --font-display: "Lexend", "sans-serif";
+  /* Roundedness from Calvin */
+  --radius-xl: 1.5rem;
+  --radius-2xl: 3rem;
+  --radius-full: 9999px;
 }
 
 @media (prefers-color-scheme: dark) {
