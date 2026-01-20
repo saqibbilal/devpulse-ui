@@ -1,4 +1,5 @@
 import { getProjects } from "@/lib/api";
+import ProjectCard from "@/components/ProjectCard";
 
 export default async function Home() {
     const projects = await getProjects();
@@ -73,7 +74,11 @@ export default async function Home() {
 
             {/* Projects Grid Container */}
             <section id="work" className="py-24 px-6 max-w-7xl mx-auto">
-                {/* We will build the cards here next */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    {projects.map((project) => (
+                        <ProjectCard key={project.id} project={project} />
+                    ))}
+                </div>
             </section>
         </main>
     );
