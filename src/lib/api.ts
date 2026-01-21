@@ -14,8 +14,8 @@ export async function getProjects(): Promise<Project[]> {
     }
 
     // convert object to json
-    const jsonResponse = await res.json();
+    const jsonToObj = await res.json();
 
     // Logic fix: Extract the 'data' array from the Laravel Resource wrapper
-    return jsonResponse.data;
+    return jsonToObj.data;
 }
