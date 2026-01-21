@@ -1,15 +1,26 @@
-// This interface matches Laravel 'projects' table schema exactly
+export interface ProjectDetail {
+    id: number;
+    problem_statement: string;
+    solution_approach: string;
+    // We use an object here Matching our Postgres JSONB structure
+    repository_links: {
+        frontend?: string;
+        backend?: string;
+    };
+    feature_highlights: string[];
+    live_url: string;
+}
+
 export interface Project {
     id: number;
     title: string;
     slug: string;
     description: string;
     thumbnail_url: string;
-    tech_stack: string[]; // Handled as an array thanks to Laravel's JSON casting
-    live_url: string | null;
-    github_url: string | null;
+    tech_stack: string[];
+    // Keep these for logic/ordering on the frontend
     order: number;
     is_featured: boolean;
-    created_at: string;
-    updated_at: string;
+    // RULE: Relationship is optional because we use whenLoaded() in Laravel
+    detail?: ProjectDetail;
 }

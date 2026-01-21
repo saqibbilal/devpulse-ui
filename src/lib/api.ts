@@ -24,7 +24,7 @@ export async function getProjects(): Promise<Project[]> {
 export async function getProjectBySlug(slug: string): Promise<Project | null> {
     // 1. Replaced SSR (no-store) with ISR (revalidate)
     const res = await fetch(`${API_URL}/projects/${slug}`, {
-        next: { revalidate: 3600 },
+        cache: "no-store",
     });
 
     // 2. Standard 404 handling for our Page Component

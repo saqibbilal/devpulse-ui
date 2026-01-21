@@ -70,9 +70,53 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </div>
             </section>
 
-            {/* CONTENT AREA: For the detailed technical story */}
-            <section className="py-24 px-6 max-w-4xl mx-auto">
-                {/* We will map further project details here next */}
+
+            <section className="py-24 px-6 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-16">
+                {/* Left Column: The Technical Story */}
+                <div className="lg:col-span-2 space-y-12">
+                    <div>
+                        <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-4">The Challenge</h2>
+                        <p className="text-2xl text-gray-800 leading-relaxed">{project.detail?.problem_statement}</p>
+                    </div>
+
+                    <div>
+                        <h2 className="text-sm font-bold uppercase tracking-widest text-brand-primary mb-4">The Solution</h2>
+                        <p className="text-xl text-gray-600 leading-relaxed">{project.detail?.solution_approach}</p>
+                    </div>
+                </div>
+
+                {/* Right Column: Links & Features */}
+                <div className="space-y-12">
+                    {/* Repo Links */}
+                    <div className="bg-gray-50 p-8 rounded-[2rem] border border-gray-100">
+                        <h3 className="font-bold mb-6">Explore the Code</h3>
+                        <div className="flex flex-col gap-3">
+                            {project.detail?.repository_links.frontend && (
+                                <a href={project.detail.repository_links.frontend} target="_blank" className="bg-black text-white text-center py-3 rounded-xl font-bold hover:bg-brand-primary transition-colors">
+                                    Frontend (Next.js)
+                                </a>
+                            )}
+                            {project.detail?.repository_links.backend && (
+                                <a href={project.detail.repository_links.backend} target="_blank" className="bg-white border border-gray-200 text-black text-center py-3 rounded-xl font-bold hover:border-black transition-colors">
+                                    Backend (Laravel)
+                                </a>
+                            )}
+                        </div>
+                    </div>
+
+                    {/* Feature Highlights */}
+                    <div>
+                        <h3 className="font-bold mb-4 uppercase tracking-tighter text-gray-400">Key Features</h3>
+                        <ul className="space-y-2">
+                            {project.detail?.feature_highlights.map(feature => (
+                                <li key={feature} className="flex items-center gap-2 text-gray-700 font-medium">
+                                    <span className="w-1.5 h-1.5 bg-brand-primary rounded-full" />
+                                    {feature}
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                </div>
             </section>
         </main>
     );
