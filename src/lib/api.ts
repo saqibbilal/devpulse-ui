@@ -21,17 +21,19 @@ export async function getProjects(): Promise<Project[]> {
 }
 
 
-export async function getProjectBySlug(slug: string): Promise<Project> {
+export async function getProjectBySlug(slug: string): Promise<Project | null> {
+    // 1. Replaced SSR (no-store) with ISR (revalidate)
     const res = await fetch(`${API_URL}/projects/${slug}`, {
-        // We keep the revalidation consistent with your index page
-        next: { revalidate: 5 },
+        next: { revalidate: 3600 },
     });
 
-    if (!res.ok) {
-        // If the API returns a 404, this will trigger the 'catch' in your page.tsx
-        throw new Error(`Project with slug ${slug} not found`);
-    }
+    // 2. Standard 404 handling for our Page Component
+    if (res.status === 404) return null;
 
+    // 3. Robust error handling for unexpected API crashes
+    if (!res.ok) throw new Error("API Error: Failed to fetch single project");
+
+    // 4. Unwrap the Laravel Resource data
     const json = await res.json();
-    return json.data; // Always remember to unwrap the Laravel Resource 'data' key!
+    return json.data;
 }
