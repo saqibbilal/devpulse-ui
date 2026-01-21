@@ -13,5 +13,9 @@ export async function getProjects(): Promise<Project[]> {
         throw new Error('Failed to fetch projects from the API');
     }
 
-    return res.json();
+    // convert object to json
+    const jsonResponse = await res.json();
+
+    // Logic fix: Extract the 'data' array from the Laravel Resource wrapper
+    return jsonResponse.data;
 }
