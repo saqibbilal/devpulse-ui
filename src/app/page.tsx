@@ -13,6 +13,7 @@ export default async function Home() {
     // Filter skills by category (we'll set these up in Laravel next)
     const backendSkills = allSkills.filter(s => s.category === 'backend').map(s => s.name);
     const frontendSkills = allSkills.filter(s => s.category === 'frontend').map(s => s.name);
+    const tooling = allSkills.filter(s => s.category === 'tools').map(s => s.name);
 
     return (
         <main className="min-h-screen">
@@ -84,24 +85,33 @@ export default async function Home() {
 
 
             {/*{ The SkillsGrid section }*/}
-            <div id="SkillsGrid" className="py-5 max-w-4xl my-10 mx-15">
-                <h2 className="text-4xl md:text-6xl text-gray-800 font-bold tracking-tighter mb-8">
-                    My Technical Arsenal
-                </h2>
+            {/* 1. Use mx-auto to center the entire block on the screen */}
+            <div id="SkillsGrid" className="py-8 max-w-7xl my-10 mx-auto px-6">
+
+                {/* 2. Center the text heading */}
+                <div className="text-center mb-16">
+                    <h2 className="text-4xl md:text-6xl text-gray-800 font-bold tracking-tighter">
+                        My Technical Arsenal
+                    </h2>
+                </div>
 
                 {allSkills.length > 0 ? (
-                    <>
+                    /* 3. Grid handles the columns; no need for flex classes here */
+                    <div className="grid grid-cols-1 gap-5">
                         <SkillsGrid title="The Engine (Backend)" skills={backendSkills} />
                         <SkillsGrid title="The Experience (Frontend)" skills={frontendSkills} />
-                    </>
+                        <SkillsGrid title="The Tools (DevOps)" skills={tooling} />
+                    </div>
                 ) : (
-                    <p className="text-gray-400 italic text-sm">Skills are being synchronized...</p>
+                    <div className="text-center">
+                        <p className="text-gray-400 italic text-sm">Skills are being synchronized...</p>
+                    </div>
                 )}
             </div>
 
             {/* Projects Grid Container */}
             {/* Latest Sprints Section */}
-            <section id="work" className="py-15 px-6 max-w-7xl mx-auto">
+            <section id="work" className="py-10 px-6 max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
                     <div>
                         <h4 className="text-brand-primary font-bold uppercase tracking-[0.2em] text-sm mb-4">Latest Sprints</h4>
