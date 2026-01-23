@@ -24,3 +24,9 @@ export interface Project {
     // RULE: Relationship is optional because we use whenLoaded() in Laravel
     detail?: ProjectDetail;
 }
+
+export interface Skill {
+    id: number;
+    name: string;
+    category: 'backend' | 'frontend' | 'tools'; // Adding categories for better organization
+}

@@ -1,6 +1,6 @@
-import { Project } from "@/types";
+import { Project, Skill } from "@/types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://devpulse-api.test/api";;
 
 export async function getProjects(): Promise<Project[]> {
     // Using the absolute URL for server-side fetches
@@ -36,4 +36,22 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
     // 4. Unwrap the Laravel Resource data
     const json = await res.json();
     return json.data;
+}
+
+export async function getSkills(): Promise<Skill[]> {
+    try {
+        const response = await fetch(`${API_URL}/skills`, {
+            next: { revalidate: 3600 } // Cache for 1 hour for performance
+        });
+
+        if (!response.ok) {
+            throw new Error("Failed to fetch skills");
+        }
+
+        const data = await response.json();
+        return data.data; // Remember, Laravel resources wrap data in a 'data' key
+    } catch (error) {
+        console.error("Error fetching skills:", error);
+        return [];
+    }
 }

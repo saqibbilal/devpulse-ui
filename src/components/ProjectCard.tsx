@@ -6,7 +6,7 @@ interface Props {
     project: Project;
 }
 
-export function ProjectCard({ project }: Props) {
+export default function ProjectCard({ project }: Props) {
     return (
         <Link
             href={`/projects/${project.slug}`}

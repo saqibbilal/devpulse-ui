@@ -1,8 +1,18 @@
-import { getProjects } from "@/lib/api";
-import { ProjectCard } from "@/components/ProjectCard";
+import { getProjects, getSkills } from "@/lib/api";
+import ProjectCard from "@/components/ProjectCard";
+import SkillsGrid from "@/components/SkillsGrid";
 
 export default async function Home() {
-    const projects = await getProjects();
+
+    // Fetching both in parallel for speed
+    const [projects, allSkills] = await Promise.all([
+        getProjects(),
+        getSkills()
+    ]);
+
+    // Filter skills by category (we'll set these up in Laravel next)
+    const backendSkills = allSkills.filter(s => s.category === 'backend').map(s => s.name);
+    const frontendSkills = allSkills.filter(s => s.category === 'frontend').map(s => s.name);
 
     return (
         <main className="min-h-screen">
@@ -72,13 +82,30 @@ export default async function Home() {
                 </div>
             </section>
 
+
+            {/*{ The SkillsGrid section }*/}
+            <div id="SkillsGrid" className="py-5 max-w-4xl my-10 mx-15">
+                <h2 className="text-4xl md:text-6xl text-gray-800 font-bold tracking-tighter mb-8">
+                    My Technical Arsenal
+                </h2>
+
+                {allSkills.length > 0 ? (
+                    <>
+                        <SkillsGrid title="The Engine (Backend)" skills={backendSkills} />
+                        <SkillsGrid title="The Experience (Frontend)" skills={frontendSkills} />
+                    </>
+                ) : (
+                    <p className="text-gray-400 italic text-sm">Skills are being synchronized...</p>
+                )}
+            </div>
+
             {/* Projects Grid Container */}
             {/* Latest Sprints Section */}
-            <section id="work" className="py-32 px-6 max-w-7xl mx-auto">
+            <section id="work" className="py-15 px-6 max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
                     <div>
                         <h4 className="text-brand-primary font-bold uppercase tracking-[0.2em] text-sm mb-4">Latest Sprints</h4>
-                        <h2 className="text-5xl font-bold tracking-tighter">Selected Projects</h2>
+                        <h2 className="text-5xl text-gray-800 font-bold tracking-tighter">Selected Projects</h2>
                     </div>
                     <p className="text-gray-400 max-w-xs text-right hidden md:block">
                         A collection of decoupled applications built with Laravel 11 and Next.js 15.
