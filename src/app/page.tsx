@@ -65,35 +65,25 @@ export default async function Home() {
                 </div>
             </section>
 
-            {/* FOOTER INFO (From Calvin) */}
-            <section className="bg-brand-primary border-t border-white/10 py-12 px-6">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-white/80">
-                    <div>
-                        <p className="text-xs uppercase tracking-widest mb-2 font-bold">Specialization</p>
-                        <p className="text-lg font-medium">Headless APIs & Web Apps</p>
-                    </div>
-                    <div>
-                        <p className="text-xs uppercase tracking-widest mb-2 font-bold">Location</p>
-                        <p className="text-lg font-medium">Markham, Ontario, Canada</p>
-                    </div>
-                    <div>
-                        <p className="text-xs uppercase tracking-widest mb-2 font-bold">Contact</p>
-                        <p className="text-lg font-medium underline decoration-white/30">saqib_bilal786@yahoo.com</p>
-                    </div>
-                </div>
-            </section>
+
 
 
             {/*{ The SkillsGrid section }*/}
             {/* 1. Use mx-auto to center the entire block on the screen */}
             <div id="SkillsGrid" className="py-8 max-w-7xl my-10 mx-auto px-6">
 
+                <div className="mb-4">
+                    <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand-primary">
+                        Toolbelt
+                    </span>
+                </div>
                 {/* 2. Center the text heading */}
-                <div className="text-center mb-16">
+                <div className="mb-6">
                     <h2 className="text-4xl md:text-6xl text-gray-800 font-bold tracking-tighter">
                         My Technical Arsenal
                     </h2>
                 </div>
+
 
                 {allSkills.length > 0 ? (
                     /* 3. Grid handles the columns; no need for flex classes here */
@@ -107,6 +97,10 @@ export default async function Home() {
                         <p className="text-gray-400 italic text-sm">Skills are being synchronized...</p>
                     </div>
                 )}
+
+
+
+
             </div>
 
             {/* Projects Grid Container */}
@@ -129,6 +123,64 @@ export default async function Home() {
                     ))}
                 </div>
             </section>
+
+
+            {/* THE STORY SECTION with Interactive Background */}
+            <section id="about" className="py-24 overflow-hidden">
+                {/* The Asymmetrical Container: Flush to Left, Rounded on Right */}
+                <div className="mr-6 lg:mr-24 bg-[#F8F8F8] rounded-r-[3rem] md:rounded-r-[6rem] p-12 md:p-24 relative">
+
+                    {/* Content stays aligned to your max-width grid logic */}
+                    <div className="max-w-7xl ml-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-brand-primary mb-6">
+                                The Narrative
+                            </h2>
+                            <h3 className="text-5xl md:text-7xl font-bold tracking-tighter leading-tight text-gray-900">
+                                Bridging Logic <br />
+                                <span className="text-brand-primary">& Creativity.</span>
+                            </h3>
+                        </div>
+
+                        <div className="space-y-8 text-xl text-gray-600 leading-relaxed font-light">
+                            <p>
+                                I’m a software engineer based in **Markham** with a unique vantage point. My journey isn't just about syntax; it's about the "Maker" mindset.
+                            </p>
+                            <p>
+                                Whether I'm architecting **decoupled Laravel APIs** or managing the precision of my home bakery, **Honeywhisk**, I focus on one thing: **Consistency**.
+                            </p>
+                            <p>
+                                From running a YouTube channel for kids to deploying to AWS, I thrive where technical complexity meets clear communication.
+                            </p>
+                            <div className="pt-8">
+                                <a href="mailto:your-email@example.com" className="text-lg font-bold text-black border-b-2 border-black hover:text-brand-primary hover:border-brand-primary transition-all pb-1">
+                                    Let’s build something steady →
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            {/* FOOTER INFO (From Calvin) */}
+            <section className="bg-brand-primary border-t border-white/10 py-12 px-6">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-white/80">
+                    <div>
+                        <p className="text-xs uppercase tracking-widest mb-2 font-bold">Specialization</p>
+                        <p className="text-lg font-medium">Headless APIs & Web Apps</p>
+                    </div>
+                    <div>
+                        <p className="text-xs uppercase tracking-widest mb-2 font-bold">Location</p>
+                        <p className="text-lg font-medium">Markham, Ontario, Canada</p>
+                    </div>
+                    <div>
+                        <p className="text-xs uppercase tracking-widest mb-2 font-bold">Contact</p>
+                        <p className="text-lg font-medium underline decoration-white/30">saqib_bilal786@yahoo.com</p>
+                    </div>
+                </div>
+            </section>
+
         </main>
     );
 }

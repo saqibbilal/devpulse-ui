@@ -6,8 +6,8 @@ interface SkillsProps {
 
 export default function SkillsGrid({ title, skills }: SkillsProps) {
     return (
-        <section className="py-10 md:py-10">
-            <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400 mb-8">
+        <section className="py-5">
+            <h3 className="text-xs font-bold uppercase tracking-[0.3em] text-gray-400 mb-5">
                 {title}
             </h3>
             <div className="flex flex-wrap gap-3 md:gap-4">

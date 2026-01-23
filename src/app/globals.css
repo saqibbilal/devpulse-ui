@@ -7,15 +7,16 @@
 
 @theme {
   /* Exact Calvin Tones */
-  --color-brand-primary: #FF8B5B;   /* The main coral-orange */
+  --color-brand-primary: #F97316; /* Main Theme color */
   --color-brand-secondary: #ffffff; /* Use white for primary text over orange */
   --color-brand-dark: #2d2d2d;      /* Deep charcoal for readability on light areas */
-  --color-brand-accent: #ffede4;    /* Soft peach background for secondary sections */
+  --color-brand-accent: #ffede4;    /* Soft peach background for secondary sections F8F8F8  ffede4*/
 
   /* Roundedness from Calvin */
   --radius-xl: 1.5rem;
   --radius-2xl: 3rem;
   --radius-full: 9999px;
+
 }
 
 @media (prefers-color-scheme: dark) {
