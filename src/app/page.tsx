@@ -1,6 +1,7 @@
 import { getProjects, getSkills } from "@/lib/api";
 import ProjectCard from "@/components/ProjectCard";
 import SkillsGrid from "@/components/SkillsGrid";
+import { Shield, Code, Cloud, Zap } from "lucide-react";
 
 export default async function Home() {
 
@@ -66,6 +67,88 @@ export default async function Home() {
             </section>
 
 
+            <section id="expertise" className="py-24 bg-white">
+                <div className="max-w-7xl mx-auto px-6">
+
+                    {/* Section Header */}
+                    <div className="mb-16">
+            <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand-primary block mb-4">
+                Professional Focus
+            </span>
+                        <h2 className="text-4xl md:text-6xl text-gray-900 font-bold tracking-tighter">
+                            My Expertise
+                        </h2>
+                    </div>
+
+                    {/* The Grid with Cross-Border Lines */}
+                    <div className="grid grid-cols-1 md:grid-cols-2">
+
+                        {/* Box 1: Architecture */}
+                        <div className="p-12 border-b border-gray-100 md:border-r hover:shadow-[0_20px_50px_rgba(249,115,22,0.1)] transition-all duration-500 group">
+                            <div className="space-y-6">
+                                <div className="w-12 h-12 text-gray-400 group-hover:text-brand-primary transition-colors">
+                                    <Shield size={48} strokeWidth={1.5} /> {/* Replaces broken img */}
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900">Architecture & Scalability</h3>
+                                <p className="text-gray-500 leading-relaxed">
+                                    Designing decoupled systems using Laravel and Next.js that are built to grow.
+                                </p>
+                                <span className="inline-block text-sm font-medium text-brand-primary border-b border-brand-primary/30 pb-1">
+                System Architect at DevPulse
+            </span>
+                            </div>
+                        </div>
+
+                        {/* Box 2: Engineering */}
+                        <div className="p-12 border-b border-gray-100 hover:shadow-[0_20px_50px_rgba(249,115,22,0.1)] transition-all duration-500 group">
+                            <div className="space-y-6">
+                                <div className="w-12 h-12 text-gray-400 group-hover:text-brand-primary transition-colors">
+                                    <Code size={48} strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900">End-to-End Engineering</h3>
+                                <p className="text-gray-500 leading-relaxed">
+                                    Full-cycle development from frontend interactivity to backend logic and AWS deployment.
+                                </p>
+                                <span className="inline-block text-sm font-medium text-brand-primary border-b border-brand-primary/30 pb-1">
+                Full Stack Developer
+            </span>
+                            </div>
+                        </div>
+
+                        {/* Box 3: Cloud */}
+                        <div className="p-12 border-b border-gray-100 md:border-b-0 md:border-r hover:shadow-[0_20px_50px_rgba(249,115,22,0.1)] transition-all duration-500 group">
+                            <div className="space-y-6">
+                                <div className="w-12 h-12 text-gray-400 group-hover:text-brand-primary transition-colors">
+                                    <Cloud size={48} strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900">Cloud Infrastructure</h3>
+                                <p className="text-gray-500 leading-relaxed">
+                                    Deploying and managing scalable environments on AWS utilizing App Runner and RDS.
+                                </p>
+                                <span className="inline-block text-sm font-medium text-brand-primary border-b border-brand-primary/30 pb-1">
+                AWS Cloud Practitioner
+            </span>
+                            </div>
+                        </div>
+
+                        {/* Box 4: Performance */}
+                        <div className="p-12 hover:shadow-[0_20px_50px_rgba(249,115,22,0.1)] transition-all duration-500 group">
+                            <div className="space-y-6">
+                                <div className="w-12 h-12 text-gray-400 group-hover:text-brand-primary transition-colors">
+                                    <Zap size={48} strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900">Performance Optimization</h3>
+                                <p className="text-gray-500 leading-relaxed">
+                                    Tuning Laravel APIs and React components to ensure low latency and high performance.
+                                </p>
+                                <span className="inline-block text-sm font-medium text-brand-primary border-b border-brand-primary/30 pb-1">
+                Backend PHP Engineer
+            </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
             {/*{ The SkillsGrid section }*/}
