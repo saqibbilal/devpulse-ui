@@ -32,6 +32,7 @@ export default function Navbar() {
                         isScrolled ? 'text-brand-dark' : 'text-white'
                     }`}>
                         <Link href="/" className="hover:opacity-70">Home</Link>
+                        <Link href="#work" className="hover:opacity-70">TechStack</Link>
                         <Link href="#work" className="hover:opacity-70">Work</Link>
                         <Link href="#about" className="hover:opacity-70">About</Link>
                     </div>

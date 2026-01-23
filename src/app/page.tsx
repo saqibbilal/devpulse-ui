@@ -1,7 +1,7 @@
 import { getProjects, getSkills } from "@/lib/api";
 import ProjectCard from "@/components/ProjectCard";
 import SkillsGrid from "@/components/SkillsGrid";
-import { Shield, Code, Cloud, Zap } from "lucide-react";
+import { Github, Linkedin, FileText, Shield, Code, Cloud, Zap } from "lucide-react";
 
 export default async function Home() {
 
@@ -19,7 +19,7 @@ export default async function Home() {
     return (
         <main className="min-h-screen">
             {/* VIBRANT CALVIN HERO - Using flex-col and padding to prevent vertical overlap */}
-            <section className="bg-brand-primary min-h-[90vh] flex flex-col justify-center px-6 relative overflow-hidden pt-32 pb-16 lg:pt-20">
+            <section id="hero" className="bg-brand-primary min-h-[100vh] flex flex-col justify-center px-6 relative overflow-hidden pt-32 pb-16 lg:pt-20">
 
                 {/* Background Ray Effect */}
                 <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none">
@@ -42,14 +42,38 @@ export default async function Home() {
                             Specializing in **API-First Laravel** backends and high-performance **Next.js 15** frontends.
                         </p>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                            <button className="bg-white text-brand-primary px-10 py-4 rounded-full font-bold shadow-xl hover:scale-105 transition-all">
-                                Explore My Sprints
-                            </button>
-                            <button className="border-2 border-white/40 px-10 py-4 rounded-full font-bold hover:bg-white/10 transition-all">
+                        <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4 mt-10">
+                            {/* Primary Action: Resume */}
+                            <a
+                                href="/path-to-your-resume.pdf"
+                                target="_blank"
+                                className="flex items-center gap-2 bg-white border border-gray-100 text-gray-600 hover:text-brand-primary hover:border-brand-primary px-4 py-4 rounded-full font-bold transition-all shadow-sm hover:shadow-md"
+                            >
+                                <FileText size={20} />
                                 View My Resume
-                            </button>
+                            </a>
+
+                            {/* Secondary Actions: Social Hub */}
+                            <div className="flex items-center gap-2">
+                                <a
+                                    href="https://github.com/your-username"
+                                    target="_blank"
+                                    className="p-4 bg-white border border-gray-100 rounded-full text-gray-600 hover:text-brand-primary hover:border-brand-primary transition-all shadow-sm hover:shadow-md"
+                                    title="GitHub Profile"
+                                >
+                                    <Github size={24} strokeWidth={1.5} />
+                                </a>
+                                <a
+                                    href="https://linkedin.com/in/your-profile"
+                                    target="_blank"
+                                    className="p-4 bg-white border border-gray-100 rounded-full text-gray-600 hover:text-brand-primary hover:border-brand-primary transition-all shadow-sm hover:shadow-md"
+                                    title="LinkedIn Profile"
+                                >
+                                    <Linkedin size={24} strokeWidth={1.5} />
+                                </a>
+                            </div>
                         </div>
+
                     </div>
 
                     {/* Right: Circle Section - Scaled for short viewports */}
