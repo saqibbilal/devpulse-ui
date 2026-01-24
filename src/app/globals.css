@@ -10,7 +10,7 @@
   --color-brand-primary: #F97316; /* Main Theme color */
   --color-brand-secondary: #ffffff; /* Use white for primary text over orange */
   --color-brand-dark: #2d2d2d;      /* Deep charcoal for readability on light areas */
-  --color-brand-accent: #ffede4;    /* Soft peach background for secondary sections F8F8F8  ffede4*/
+  --color-brand-accent: #ffede4;    /* Soft peach background for secondary sections */
 
   /* Roundedness from Calvin */
   --radius-xl: 1.5rem;
@@ -30,4 +30,13 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset for fixed navbar so section headers aren't hidden */
+section {
+  scroll-margin-top: 100px;
 }
