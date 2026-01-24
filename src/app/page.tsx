@@ -3,6 +3,7 @@ export const dynamic = 'force-dynamic';
 import { getProjects, getSkills } from "@/lib/api";
 import ProjectCard from "@/components/ProjectCard";
 import SkillsGrid from "@/components/SkillsGrid";
+import Contact from "@/components/Contact";
 import { Github, Linkedin, FileText, Shield, Code, Cloud, Zap } from "lucide-react";
 
 export default async function Home() {
@@ -179,7 +180,7 @@ export default async function Home() {
 
             {/*{ The SkillsGrid section }*/}
             {/* 1. Use mx-auto to center the entire block on the screen */}
-            <div id="SkillsGrid" className="py-8 max-w-7xl my-10 mx-auto px-6">
+            <section id="SkillsGrid" className="py-8 max-w-7xl my-10 mx-auto px-6">
 
                 <div className="mb-4">
                     <span className="text-xs font-bold uppercase tracking-[0.3em] text-brand-primary">
@@ -206,11 +207,7 @@ export default async function Home() {
                         <p className="text-gray-400 italic text-sm">Skills are being synchronized...</p>
                     </div>
                 )}
-
-
-
-
-            </div>
+            </section>
 
             {/* Projects Grid Container */}
             {/* Latest Sprints Section */}
@@ -237,7 +234,7 @@ export default async function Home() {
             {/* THE STORY SECTION with Interactive Background */}
             <section id="about" className="py-24 overflow-hidden">
                 {/* The Asymmetrical Container: Flush to Left, Rounded on Right */}
-                <div className="mr-6 lg:mr-24 bg-[#F8F8F8] rounded-r-[3rem] md:rounded-r-[6rem] p-12 md:p-24 relative">
+                <div className="mr-6 lg:mr-24 bg-white/90 rounded-r-[3rem] md:rounded-r-[6rem] p-12 md:p-24 relative shadow-md">
 
                     {/* Content stays aligned to your max-width grid logic */}
                     <div className="max-w-7xl ml-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -272,11 +269,16 @@ export default async function Home() {
             </section>
 
 
+
+            < Contact />
+
+
+
             {/* FOOTER INFO (From Calvin) */}
             <section className="bg-brand-primary border-t border-white/10 py-12 px-6">
-                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-white/80">
+                <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-white/80 text-center md:text-left">
                     <div>
-                        <p className="text-xs uppercase tracking-widest mb-2 font-bold">Specialization</p>
+                        <p className="text-xs uppercase tracking-widest mb-2 font-bold justify-left">Specialization</p>
                         <p className="text-lg font-medium">Headless APIs & Web Apps</p>
                     </div>
                     <div>
