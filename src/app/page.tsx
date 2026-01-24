@@ -1,3 +1,5 @@
+export const dynamic = 'force-dynamic';
+
 import { getProjects, getSkills } from "@/lib/api";
 import ProjectCard from "@/components/ProjectCard";
 import SkillsGrid from "@/components/SkillsGrid";
