@@ -41,7 +41,7 @@ export default function Navbar() {
                     <button className={`px-4 py-1.5 md:px-6 md:py-2 rounded-full font-bold text-xs md:text-sm transition-all duration-500 ${
                         isScrolled ? 'bg-brand-primary text-white' : 'bg-white text-brand-primary shadow-lg'
                     }`}>
-                        Let's Talk
+                        Let&apos;s Talk
                     </button>
 
                     {/* Hamburger - Visible on MD and below (including 928px) */}

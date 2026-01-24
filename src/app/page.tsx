@@ -251,10 +251,10 @@ export default async function Home() {
 
                         <div className="space-y-8 text-xl text-gray-600 leading-relaxed font-light">
                             <p>
-                                I’m a software engineer based in **Markham** with a unique vantage point. My journey isn't just about syntax; it's about the "Maker" mindset.
+                                I&apos;m a software engineer based in **Markham** with a unique vantage point. My journey isn&apos;t just about syntax; it&apos;s about the &quot;Maker&quot; mindset.
                             </p>
                             <p>
-                                Whether I'm architecting **decoupled Laravel APIs** or managing the precision of my home bakery, **Honeywhisk**, I focus on one thing: **Consistency**.
+                                Whether I&apos;m architecting **decoupled Laravel APIs** or managing the precision of my home bakery, **Honeywhisk**, I focus on one thing: **Consistency**.
                             </p>
                             <p>
                                 From running a YouTube channel for kids to deploying to AWS, I thrive where technical complexity meets clear communication.
