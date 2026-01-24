@@ -12,9 +12,9 @@ export default function Contact() {
     };
 
     return (
-        <section id="contact" className="py-24 overflow-hidden">
+        <section id="contact" className="py-16 bg-white overflow-hidden">
             {/* The Inverted Asymmetrical Container: Flush to Right, Rounded on Left */}
-            <div className="ml-6 lg:ml-24 bg-white/90 rounded-l-[3rem] md:rounded-l-[6rem] p-12 md:p-24 relative shadow-md">
+            <div className="ml-6 lg:ml-24 bg-gray-50 rounded-l-[4rem] md:rounded-l-[8rem] p-12 md:p-24 relative shadow-sm border-gray-100">
 
                 {/* Content stays aligned to your max-width grid logic */}
                 <div className="max-w-7xl mr-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-start">
@@ -35,7 +35,7 @@ export default function Contact() {
 
                         <div className="space-y-4">
                             <p className="text-[10px] uppercase tracking-[0.3em] font-bold text-gray-400">Current Base</p>
-                            <p className="text-lg font-medium">Markham, Ontario 🇨🇦</p>
+                            <p className="text-lg font-medium text-brand-primary">Toronto, Ontario 🇨🇦</p>
                         </div>
                     </div>
 
@@ -43,10 +43,10 @@ export default function Contact() {
                     <div className="bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl border border-gray-100">
                         {status === "success" ? (
                             <div className="h-full flex flex-col items-center justify-center text-center space-y-4 py-16">
-                                <div className="w-20 h-20 bg-green-50 text-green-600 rounded-full flex items-center justify-center">
+                                <div className="w-20 h-20 bg-orange-100/80 text-brand-primary rounded-full flex items-center justify-center">
                                     <Send size={32} />
                                 </div>
-                                <h3 className="text-2xl font-bold">Message Sent!</h3>
+                                <h3 className="text-brand-primary text-2xl font-bold">Message Sent!</h3>
                                 <p className="text-gray-500">I&apos;ll get back to you shortly, Saqib.</p>
                                 <button onClick={() => setStatus("idle")} className="text-brand-primary font-bold text-sm underline underline-offset-4">Send another</button>
                             </div>
@@ -54,17 +54,17 @@ export default function Contact() {
                             <form onSubmit={handleSubmit} className="space-y-6">
                                 <div className="space-y-2">
                                     <label className="text-[10px] uppercase tracking-widest font-black text-brand-primary ml-4">Your Identity</label>
-                                    <input required type="text" placeholder="Full Name" className="w-full bg-[#ededed] placeholder-gray-400 border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-brand-primary/20 transition-all outline-none" />
+                                    <input required type="text" placeholder="Full Name" className="text-brand-dark w-full bg-[#ededed] placeholder-gray-400 border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-brand-primary/20 transition-all outline-none" />
                                 </div>
 
                                 <div className="space-y-2">
                                     <label className="text-[10px] uppercase tracking-widest font-black text-brand-primary ml-4">Email Channel</label>
-                                    <input required type="email" placeholder="email@company.com" className="w-full bg-[#ededed] placeholder-gray-400 border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-brand-primary/20 transition-all outline-none" />
+                                    <input required type="email" placeholder="email@company.com" className="text-brand-dark w-full bg-[#ededed] placeholder-gray-400 border-none rounded-full px-6 py-4 focus:ring-2 focus:ring-brand-primary/20 transition-all outline-none" />
                                 </div>
 
                                 <div className="space-y-2">
                                     <label className="text-[10px] uppercase tracking-widest font-black text-brand-primary ml-4">Project Brief</label>
-                                    <textarea required rows={4} placeholder="What are we building?" className="w-full bg-[#ededed] placeholder-gray-400 border-none rounded-[2rem] px-6 py-5 focus:ring-2 focus:ring-brand-primary/20 transition-all outline-none resize-none" />
+                                    <textarea required rows={4} placeholder="What are we building?" className="text-brand-dark w-full bg-[#ededed] placeholder-gray-400 border-none rounded-[2rem] px-6 py-5 focus:ring-2 focus:ring-brand-primary/20 transition-all outline-none resize-none" />
                                 </div>
 
                                 <button

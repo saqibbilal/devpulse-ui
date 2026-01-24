@@ -22,7 +22,7 @@ export default function Footer() {
                     <div className="flex items-center gap-4">
                         {/* Resume Link */}
                         <a
-                            href="/Muhammad_Saqib_Bilal_Resume.pdf"
+                            href="/resume.pdf"
                             target="_blank"
                             className="flex items-center gap-2 bg-white border border-gray-100 text-gray-600 hover:text-brand-primary hover:border-brand-primary px-5 py-2.5 rounded-full text-xs font-bold transition-all shadow-lg"
                         >
@@ -41,7 +41,7 @@ export default function Footer() {
                                 <Github size={18} />
                             </a>
                             <a
-                                href="https://linkedin.com/in/saqib-bilal"
+                                href="https://www.linkedin.com/in/saqibbilal/"
                                 target="_blank"
                                 className="p-2.5 bg-gray-50 rounded-full text-gray-400 hover:text-brand-primary hover:bg-orange-50 transition-all"
                             >

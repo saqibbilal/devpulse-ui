@@ -14,7 +14,7 @@ export default function SkillsGrid({ title, skills }: SkillsProps) {
                 {skills.map((skill) => (
                     <div
                         key={skill}
-                        className="px-5 py-2 md:px-5 md:py-2 border border-gray-100 rounded-2xl bg-white text-gray-800 font-bold hover:border-brand-primary hover:text-brand-primary hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
+                        className="px-5 py-2 md:px-5 md:py-2 border border-gray-200 rounded-2xl bg-white text-gray-800 font-bold hover:border-brand-primary hover:text-brand-primary hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-default"
                     >
                         {skill}
                     </div>
