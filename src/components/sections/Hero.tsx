@@ -19,7 +19,7 @@ export default function Hero() {
                         Systems.
                     </h1>
                     <p className="text-lg md:text-xl lg:text-2xl font-light max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed opacity-95">
-                        Specializing in API-First **Laravel** backends and high-performance **Next.js 15** frontends. Based in the Greater Toronto Area.
+                        Specializing in API-First <span className="font-bold text-brand-accent">Laravel</span> backends and high-performance <span className="font-bold text-brand-accent">Next.js 15</span> frontends with over <span className="font-bold">5 years</span> of enterprise engineering experience. Based in the Greater Toronto Area.
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">

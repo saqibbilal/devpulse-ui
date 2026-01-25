@@ -36,12 +36,14 @@ export default function About() {
                     {/* Right Side: Copy & CTA */}
                     <div className="space-y-8 text-xl text-gray-600 leading-relaxed font-light">
                         <p>
-                            I&apos;m a software engineer based in **Markham** with a unique vantage point. My journey isn&apos;t just about syntax; it&apos;s about the &quot;Maker&quot; mindset.
+                            I am a <span className="font-bold text-brand-primary">Senior Full Stack Developer</span> based in Markham, specialized in transforming complex legacy systems into high-performance, <span className="font-bold text-brand-primary">decoupled architectures</span>. With over <span className="font-bold text-gray-900">5 years of experience</span>, my engineering philosophy is built on type-safety, test-driven development, and the precision of the &quot;Maker&quot; mindset.
                         </p>
                         <p>
-                            Whether I&apos;m architecting **decoupled Laravel APIs** or managing the precision of my home bakery, **Honeywhisk**, I focus on one thing: **Consistency**.
+                            Whether I&apos;m architecting <span className="font-bold text-brand-primary">API-first Laravel backends</span> for enterprise scalability or crafting interactive <span className="font-bold text-brand-primary">Next.js 15 frontends</span>, I focus on delivering consistency.
                         </p>
-
+                        <p>
+                            Currently, I am expanding the boundaries of my stack by integrating <span className="font-bold text-brand-primary">AI-driven components</span> and agentic tools into my development workflow, ensuring that the systems I build today are ready for the intelligence requirements of tomorrow.
+                        </p>
                         <div className="pt-8">
                             <button
                                 onClick={scrollToContact}
