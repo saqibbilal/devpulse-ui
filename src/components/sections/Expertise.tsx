@@ -1,4 +1,13 @@
-import { Layers, CodeXml, CloudSync, ShieldCheck } from "lucide-react";
+import { LucideIcon , Layers, CodeXml, CloudSync, ShieldCheck } from "lucide-react";
+
+interface ExpertiseCardProps {
+    Icon: LucideIcon;
+    title: string;
+    desc: string;
+    label: string;
+    hasRightBorder?: boolean;
+    noBottomBorder?: boolean;
+}
 
 export default function Expertise() {
     return (
@@ -44,7 +53,7 @@ export default function Expertise() {
     );
 }
 
-function ExpertiseCard({ Icon, title, desc, label, hasRightBorder = false, noBottomBorder = false }: any) {
+function ExpertiseCard({ Icon, title, desc, label, hasRightBorder = false, noBottomBorder = false }: ExpertiseCardProps) {
 
     const keywords = [
         'laravel', 'next.js', 'typescript', 'react', 'tailwindcss',
