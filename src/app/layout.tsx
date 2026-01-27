@@ -11,7 +11,7 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-    title: "DevPulse | Senior Software Engineer",
+    title: "M. Bilal | Full Stack Developer",
     description: "Muhammad Saqib Bilal Portfolio",
 };
 
