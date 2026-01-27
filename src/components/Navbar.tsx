@@ -54,11 +54,11 @@ export default function Navbar() {
                 <Link
                     href="/"
                     onClick={handleHome}
-                    className={`text-xl md:text-2xl font-bold tracking-tighter transition-colors duration-500 ${
+                    className={`text-xl md:text-2xl font-bold tracking-tight transition-colors duration-500 ${
                         isSolid ? 'text-brand-primary' : 'text-white'
                     }`}
                 >
-                    DevPulse
+                    MBilal
                 </Link>
 
                 <div className="flex items-center gap-4 md:gap-8">

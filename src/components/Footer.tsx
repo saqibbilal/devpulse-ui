@@ -36,14 +36,14 @@ export default function Footer() {
                             <a
                                 href="https://github.com/saqibbilal"
                                 target="_blank"
-                                className="p-2.5 bg-gray-50 rounded-full text-gray-400 hover:text-brand-primary hover:bg-orange-50 transition-all"
+                                className="p-2.5 rounded-full bg-white border border-gray-100 text-gray-600 hover:text-brand-primary hover:border-brand-primary transition-all shadow-lg"
                             >
                                 <Github size={18} />
                             </a>
                             <a
                                 href="https://www.linkedin.com/in/saqibbilal/"
                                 target="_blank"
-                                className="p-2.5 bg-gray-50 rounded-full text-gray-400 hover:text-brand-primary hover:bg-orange-50 transition-all"
+                                className="p-2.5 rounded-full bg-white border border-gray-100 text-gray-600 hover:text-brand-primary hover:border-brand-primary transition-all shadow-lg"
                             >
                                 <Linkedin size={18} />
                             </a>
@@ -55,7 +55,7 @@ export default function Footer() {
                 {/* Bottom Copyright Strip */}
                 <div className="mt-12 border-t bg-gray-500 border-brand-primary text-[10px] uppercase tracking-[0.2em] text-gray-300 font-bold">
                     <div className="flex justify-between items-center max-w-xl mx-auto py-4 px-4">
-                        <p>© 2026 DevPulse API</p>
+                        <p>© 2026 mbilal.ca</p>
                         <p>Toronto, Ontario</p>
                     </div>
                 </div>
