@@ -58,7 +58,7 @@ export default function Navbar() {
                         isSolid ? 'text-brand-primary' : 'text-white'
                     }`}
                 >
-                    MBilal &gt;_
+                    MBilal
                 </Link>
 
                 <div className="flex items-center gap-4 md:gap-8">
