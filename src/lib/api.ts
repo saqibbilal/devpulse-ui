@@ -1,23 +1,27 @@
 import { Project, Skill } from "@/types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://devpulse-api.test/api";;
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.devpulse.mbilal.ca/api";
 
 export async function getProjects(): Promise<Project[]> {
-    // Using the absolute URL for server-side fetches
-    const res = await fetch(`${API_URL}/projects`, {
-        // Next.js 15 Fetch Cache: revalidate every hour
-        next: { revalidate: 3600 },
-    });
+    const url = `${API_URL}/projects`;
+    console.log("🚀 Server-side fetching from:", url); // This is for your Vercel Logs
 
-    if (!res.ok) {
-        throw new Error('Failed to fetch projects from the API');
+    try {
+        const res = await fetch(url, {
+            next: { revalidate: 3600 },
+        });
+
+        if (!res.ok) {
+            console.error(`❌ API Error: ${res.status} ${res.statusText}`);
+            return []; // Return empty instead of crashing the whole site
+        }
+
+        const jsonToObj = await res.json();
+        return jsonToObj.data || [];
+    } catch (error) {
+        console.error("❌ Fetch failed entirely:", error);
+        return [];
     }
-
-    // convert object to json
-    const jsonToObj = await res.json();
-
-    // Logic fix: Extract the 'data' array from the Laravel Resource wrapper
-    return jsonToObj.data;
 }
 
 
