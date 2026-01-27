@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🌐 DevPulse UI
 
-## Getting Started
+The high-performance, responsive frontend for the DevPulse ecosystem. Built with **Next.js 15** and **Tailwind CSS**, optimized for Core Web Vitals and seamless user experience.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Live Demo
+**Primary Domain:** [mbilal.ca](https://mbilal.ca)  
+**Status:** 🟢 Production Ready
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🏗 Architecture & Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+This frontend is designed as a **Decoupled Client**, consuming data from a containerized Laravel API via secure REST endpoints.
 
-## Learn More
+### **Core Stack**
+* **Framework:** Next.js 15 (App Router)
+* **Language:** TypeScript
+* **Styling:** Tailwind CSS
+* **Data Fetching:** Server-side Fetch (ISR/SSR)
+* **Deployment:** Vercel (Edge Network)
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## ✨ Key Features
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+* **Server-Side Rendering (SSR):** Optimized initial load times and SEO performance.
+* **Incremental Static Regeneration (ISR):** Project data is cached and revalidated every hour for peak performance.
+* **Responsive Design:** A mobile-first approach ensuring a premium experience across all devices.
+* **Dynamic Metadata:** Automated SEO optimization for individual project pages.
+* **Pulsing Live Indicators:** Real-time visual feedback for projects currently live in production.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## ☁️ Deployment Workflow
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The frontend is deployed on **Vercel**, benefiting from their global Edge Network and automated CI/CD.
+
+* **Branch Protection:** Any push to `main` triggers an automatic production build.
+* **Environment Management:** Utilizes `NEXT_PUBLIC_API_URL` to communicate securely with the AWS-hosted backend.
+* **Optimization:** Automatic image optimization via the Next.js `<Image />` component.
+
+---
+
+## 🛠 Getting Started
+
+1. **Clone the repo:**
+   ```bash
+   git clone [https://github.com/your-username/devpulse-ui.git](https://github.com/your-username/devpulse-ui.git)```
+
+2. **Install dependencies:**
+```npm install```
+
+
+3. **Setup Environment Variables: Create a .env.local file:**
+```NEXT_PUBLIC_API_URL=[https://api.devpulse.mbilal.ca/api](https://api.devpulse.mbilal.ca/api)```
+
+
+4. **Run Development Server:**
+```npm run dev```
+
+
+© 2026 M. Bilal | mbilal.ca
+
+
+
