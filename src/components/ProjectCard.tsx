@@ -35,7 +35,7 @@ export default function ProjectCard({ project }: Props) {
             <div className="mt-8 px-2">
                 <div className="flex gap-2 mb-4">
                     {project.tech_stack?.map((tech) => (
-                        <span key={tech} className="text-[10px] font-bold text-brand-primary/60 uppercase tracking-tighter">
+                        <span key={tech} className="text-[10px] font-bold text-brand-primary uppercase tracking-tighter">
                             {tech}
                         </span>
                     ))}
