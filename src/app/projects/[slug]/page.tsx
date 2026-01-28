@@ -1,8 +1,18 @@
-import { getProjectBySlug } from "@/lib/api";
+import { getProjects, getProjectBySlug } from "@/lib/api";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
+
+export const dynamic = 'force-static'; // Switch to turn on SSG
+
+// This function tells Next.js exactly which pages to build at deployment
+export async function generateStaticParams() {
+    const projects = await getProjects();
+    return projects.map((project) => ({
+        slug: project.slug,
+    }));
+}
 
 interface Props {
     // RULE: In Next.js 15, params is a Promise
@@ -165,7 +175,17 @@ export default async function ProjectDetailPage({ params }: Props) {
                                     rel="noopener noreferrer"
                                     className="bg-white border border-gray-400 text-gray-500 text-center py-3 rounded-xl font-bold hover:text-gray-700 hover:border-gray-700 hover:shadow hover:bg-gray-100/20 transition-all active:scale-[0.98]"
                                 >
-                                    Backend Architecture
+                                    Backend Source
+                                </a>
+                            )}
+                            {project.detail?.repository_links?.monorepo && (
+                                <a
+                                    href={project.detail.repository_links.monorepo}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="bg-white border border-gray-400 text-gray-500 text-center py-3 rounded-xl font-bold hover:text-gray-700 hover:border-gray-700 hover:shadow hover:bg-gray-100/20 transition-all active:scale-[0.98]"
+                                >
+                                    Monorepo Source
                                 </a>
                             )}
                         </div>

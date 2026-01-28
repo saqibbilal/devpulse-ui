@@ -6,6 +6,7 @@ export interface ProjectDetail {
     repository_links: {
         frontend?: string;
         backend?: string;
+        monorepo?: string;
     };
     feature_highlights: string[];
     live_url: string;
