@@ -23,7 +23,7 @@ export default function Hero() {
                     </p>
 
                     <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-                        <a href="/resume.pdf" target="_blank" className="flex items-center gap-2 bg-white text-gray-600 border border-gray-100 px-8 py-4 rounded-full font-bold transition-all shadow-sm hover:shadow-md hover:text-brand-primary">
+                        <a href="/Saqib_Bilal_FullStack_2026.pdf" target="_blank" className="flex items-center gap-2 bg-white text-gray-600 border border-gray-100 px-8 py-4 rounded-full font-bold transition-all shadow-sm hover:shadow-md hover:text-brand-primary">
                             <FileText size={20} />
                             View My Resume
                         </a>

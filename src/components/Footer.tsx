@@ -22,7 +22,7 @@ export default function Footer() {
                     <div className="flex items-center gap-4">
                         {/* Resume Link */}
                         <a
-                            href="/resume.pdf"
+                            href="/Saqib_Bilal_FullStack_2026.pdf"
                             target="_blank"
                             className="flex items-center gap-2 bg-white border border-gray-100 text-gray-600 hover:text-brand-primary hover:border-brand-primary px-5 py-2.5 rounded-full text-xs font-bold transition-all shadow-lg"
                         >
