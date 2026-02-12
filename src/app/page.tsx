@@ -1,5 +1,5 @@
 // export const dynamic = 'force-dynamic'; // Switch to turn on SSR
-export const dynamic = 'force-static'; // Switch to turn on SSG
+// export const dynamic = 'force-static'; // Switch to turn on SSG
 
 import { getProjects, getSkills } from "@/lib/api";
 import Hero from "@/components/sections/Hero";
