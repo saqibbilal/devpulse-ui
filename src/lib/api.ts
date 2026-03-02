@@ -1,6 +1,6 @@
 import { Project, Skill } from "@/types";
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.devpulse.mbilal.ca/api";
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.mbilal.ca/api";
 
 export async function getProjects(): Promise<Project[]> {
     const url = `${API_URL}/projects`;
@@ -28,7 +28,7 @@ export async function getProjects(): Promise<Project[]> {
 export async function getProjectBySlug(slug: string): Promise<Project | null> {
     // 1. Replaced SSR (no-store) with ISR (revalidate)
     const res = await fetch(`${API_URL}/projects/${slug}`, {
-        cache: "no-store",
+        next: { revalidate: 3600 },
     });
 
     // 2. Standard 404 handling for our Page Component
