@@ -10,8 +10,12 @@ export const dynamicParams = true;    // Fetch new projects on-the-fly if not pr
 // This function tells Next.js exactly which pages to build at deployment
 export async function generateStaticParams() {
     const projects = await getProjects();
+
+    // Safety check: if projects is empty, return empty array so build doesn't crash
+    if (!projects || !Array.isArray(projects)) return [];
+
     return projects.map((project) => ({
-        slug: project.slug,
+        slug: String(project.slug), // Ensure it's a string
     }));
 }
 
