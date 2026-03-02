@@ -4,7 +4,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
 
-export const dynamic = 'force-static'; // Switch to turn on SSG
+export const dynamic = 'force-dynamic'; // Switch to turn on SSR
+// export const dynamic = 'force-static'; // Switch to turn on SSG
+export const dynamicParams = true;
 
 // This function tells Next.js exactly which pages to build at deployment
 export async function generateStaticParams() {

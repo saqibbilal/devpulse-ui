@@ -1,12 +1,11 @@
-// next.config.ts
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        protocol: 'http',
-        hostname: 'devpulse-api.test',
+        protocol: 'https',
+        hostname: 'api.mbilal.ca', // Your live production API
         pathname: '/storage/**',
       },
       {
