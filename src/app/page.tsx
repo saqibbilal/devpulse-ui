@@ -14,9 +14,9 @@ export default async function Home() {
         getSkills()
     ]);
 
-    const backendSkills = allSkills.filter(s => s.category === 'backend').map(s => s.name);
-    const frontendSkills = allSkills.filter(s => s.category === 'frontend').map(s => s.name);
-    const tooling = allSkills.filter(s => s.category === 'tools').map(s => s.name);
+    const backendSkills = allSkills.filter(s => s.category.toLowerCase() === 'backend').map(s => s.name);
+    const frontendSkills = allSkills.filter(s => s.category.toLowerCase() === 'frontend').map(s => s.name);
+    const tooling = allSkills.filter(s => s.category.toLowerCase() === 'tools').map(s => s.name);
 
     return (
         <main className="min-h-screen bg-white">
