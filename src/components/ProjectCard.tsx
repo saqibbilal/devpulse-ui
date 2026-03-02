@@ -19,7 +19,7 @@ export default function ProjectCard({ project }: Props) {
                     src={project.thumbnail_url}
                     alt={project.title}
                     fill
-                    unoptimized // Use this if images are hosted on devpulse-api.test or external sites
+                    priority
                     className="object-cover opacity-90 transition-all duration-700 group-hover:scale-110 group-hover:opacity-100"
                 />
 
