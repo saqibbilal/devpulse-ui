@@ -16,7 +16,7 @@ export default function Contact() {
         const data = {
             name: formData.get("name"),
             email: formData.get("email"),
-            body: formData.get("message"),
+            message: formData.get("message"),
         };
 
         try {
@@ -40,7 +40,7 @@ export default function Contact() {
             }
         } catch (error) {
             setStatus("error");
-            setApiMessage("Unable to connect to the server. Please try again later.");
+            setApiMessage("Unable to connect to the server. Please try again later. Error: "+error);
         }
     };
 
