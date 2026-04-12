@@ -1,3 +1,10 @@
+export interface ProjectImage {
+    url: string;
+    name: string;
+    order: number;
+    is_featured: boolean;
+}
+
 export interface ProjectDetail {
     id: number;
     problem_statement: string;
@@ -10,6 +17,7 @@ export interface ProjectDetail {
     };
     feature_highlights: string[];
     live_url: string;
+    gallery: ProjectImage[];
 }
 
 export interface Project {

@@ -10,6 +10,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: 'https',
+        hostname: 'devpulse-assets.s3.amazonaws.com',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
         hostname: 'devpulse-assets.s3.us-east-1.amazonaws.com', // 👈 Specific S3 Bucket
         pathname: '/**',
       },
