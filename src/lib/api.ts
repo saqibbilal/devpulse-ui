@@ -8,7 +8,7 @@ export async function getProjects(): Promise<Project[]> {
 
     try {
         const res = await fetch(url, {
-            next: { revalidate: 3600 } // 3600 seconds = 1 hour
+            cache: 'no-store' // 3600 seconds = 1 hour
         });
 
         if (!res.ok) {
@@ -30,7 +30,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 
     try {
         const res = await fetch(url, {
-            next: { revalidate: 3600 } // 3600 seconds = 1 hour
+            cache: 'no-store' // 3600 seconds = 1 hour
         });
 
         // 1. If it's a 404 or any other error, return null.
@@ -51,7 +51,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 export async function getSkills(): Promise<Skill[]> {
     try {
         const response = await fetch(`${API_URL}/skills`, {
-            next: { revalidate: 3600 } // 3600 seconds = 1 hour
+            cache: 'no-store' // 3600 seconds = 1 hour
         });
 
         // 1. Check if the response is actually valid JSON/OK
