@@ -3,8 +3,9 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
+import ProjectGallery from "@/components/ProjectGallery";
 
-export const dynamic = 'force-static'; // Keep it fast and static
+export const dynamic = 'force-dynamic'; // Keep it fast and static
 export const dynamicParams = true;    // Fetch new projects on-the-fly if not pre-built
 
 // This function tells Next.js exactly which pages to build at deployment
@@ -104,18 +105,14 @@ export default async function ProjectDetailPage({ params }: Props) {
                 </div>
             </section>
 
-            {/* PREVIEW CONTAINER */}
+            {/* PREVIEW CONTAINER (Now a Carousel) */}
             <section className="px-4 md:px-6 -mt-8 md:-mt-12">
                 <div className="max-w-7xl mx-auto">
-                    <div className="aspect-video relative bg-gray-100 rounded-[1.5rem] md:rounded-[3rem] shadow-2xl overflow-hidden border-[6px] md:border-[12px] border-white">
-                        <Image
-                            src={project.thumbnail_url ?? "/placeholder.jpg"}
-                            alt={project.title}
-                            fill
-                            className="object-cover transition-transform duration-700 hover:scale-[1.01]"
-                            priority
-                        />
-                    </div>
+                    <ProjectGallery 
+                        gallery={project.detail?.gallery || []} 
+                        thumbnailUrl={project.thumbnail_url} 
+                        title={project.title} 
+                    />
                 </div>
             </section>
 
