@@ -137,7 +137,7 @@ export default function ProjectGallery({ gallery, thumbnailUrl, title }: Project
                         draggable={false}
                         priority={currentIndex === initialIndex} // Optimization: Priority for the first visible image
                         quality={100}
-                        sizes="(max-width: 1280px) 100vw, 1200px"
+                        sizes="(max-width: 1280px) 100vw, 1256px"
                     />
                 </motion.div>
             </AnimatePresence>
