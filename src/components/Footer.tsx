@@ -8,9 +8,9 @@ export default function Footer() {
 
                     {/* Left: Direct Contact info */}
                     <div className="flex flex-col sm:flex-row gap-6 sm:gap-10 text-sm text-gray-500 font-medium">
-                        <a href="mailto:saqib_bilal786@yahoo.com" className="flex items-center gap-2 hover:text-brand-primary transition-colors">
+                        <a href="mailto:saqib@mbilal.ca" className="flex items-center gap-2 hover:text-brand-primary transition-colors">
                             <Mail size={16} strokeWidth={2} className="text-brand-primary" />
-                            saqib_bilal786@yahoo.com
+                            saqib@mbilal.ca
                         </a>
                         <a href="tel:+14372605336" className="flex items-center gap-2 hover:text-brand-primary transition-colors">
                             <Phone size={16} strokeWidth={2} className="text-brand-primary" />

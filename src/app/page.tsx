@@ -68,7 +68,7 @@ export default async function Home() {
                     </div>
                     <div>
                         <p className="text-[10px] uppercase tracking-[0.3em] font-bold mb-4 opacity-60">Direct</p>
-                        <p className="text-xl font-bold underline decoration-white/30">saqib_bilal786@yahoo.com</p>
+                        <p className="text-xl font-bold underline decoration-white/30">saqib@mbilal.ca</p>
                     </div>
                 </div>
             </footer>
