@@ -136,7 +136,7 @@ export default function ProjectGallery({ gallery, thumbnailUrl, title }: Project
                         className="object-cover select-none"
                         draggable={false}
                         priority={currentIndex === initialIndex} // Optimization: Priority for the first visible image
-                        quality={95}
+                        quality={100}
                         sizes="(max-width: 1280px) 100vw, 1200px"
                     />
                 </motion.div>
