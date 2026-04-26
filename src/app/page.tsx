@@ -1,4 +1,4 @@
-export const dynamic = 'force-dynamic'; // Switch to turn on SSG
+// export const dynamic = 'force-dynamic'; // This line turns SSR mode ON
 
 import { getProjects, getSkills } from "@/lib/api";
 import Hero from "@/components/sections/Hero";

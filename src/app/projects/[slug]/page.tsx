@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Metadata } from "next";
 import ProjectGallery from "@/components/ProjectGallery";
 
-export const dynamic = 'force-dynamic'; // Keep it fast and static
+// export const dynamic = 'force-dynamic'; // This line turns SSR mode ON
 export const dynamicParams = true;    // Fetch new projects on-the-fly if not pre-built
 
 // This function tells Next.js exactly which pages to build at deployment

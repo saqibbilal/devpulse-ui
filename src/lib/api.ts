@@ -7,9 +7,7 @@ export async function getProjects(): Promise<Project[]> {
     console.log("🚀 Server-side fetching from:", url); // This is for your Vercel Logs
 
     try {
-        const res = await fetch(url, {
-            cache: 'no-store' // 3600 seconds = 1 hour
-        });
+        const res = await fetch(url);
 
         if (!res.ok) {
             console.error(`❌ API Error: ${res.status} ${res.statusText}`);
@@ -29,9 +27,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
     const url = `${API_URL}/projects/${slug}`;
 
     try {
-        const res = await fetch(url, {
-            cache: 'no-store' // 3600 seconds = 1 hour
-        });
+        const res = await fetch(url);
 
         // 1. If it's a 404 or any other error, return null.
         // DO NOT throw an error, or the build will fail.
@@ -50,9 +46,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 
 export async function getSkills(): Promise<Skill[]> {
     try {
-        const response = await fetch(`${API_URL}/skills`, {
-            cache: 'no-store' // 3600 seconds = 1 hour
-        });
+        const response = await fetch(`${API_URL}/skills`);
 
         // 1. Check if the response is actually valid JSON/OK
         if (!response.ok) {
